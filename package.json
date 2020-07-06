@@ -1,0 +1,45 @@
+{
+  "name": "course-nodejs-api-restfull",
+  "version": "1.0.0",
+  "description": "Implementation of API Restfull with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raidyarenas/Course-NodeJS-API-RestFull.git"
+  },
+  "keywords": [
+    "Node.js",
+    "DI",
+    "MongoDB"
+  ],
+  "author": "Raidy Arenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raidyarenas/Course-NodeJS-API-RestFull/issues"
+  },
+  "homepage": "https://github.com/raidyarenas/Course-NodeJS-API-RestFull#readme",
+  "dependencies": {
+    "awilix": "^4.2.6",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "memory-cache": "^0.2.0",
+    "mongoose": "^5.9.21",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "jest": "^26.1.0",
+    "mockingoose": "^2.13.2",
+    "nodemon": "^2.0.4"
+  }
+}
