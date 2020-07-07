@@ -10,6 +10,7 @@ const routesMain = require('../routers');
 const { HomeService } = require('../services');
 const { HomeController } = require('../controllers');
 const { HomeRoutes } = require('../routers/index.routes');
+const { User, Idea, Comment } = require("../models");
 
 
 const routes = {
@@ -26,6 +27,12 @@ const services = {
 
 const repositories = {};
 
+const models = {
+    User: asValue(User),
+    Idea: asValue(Idea),
+    Comment: asValue(Comment),
+}
+
 const container = createContainer();
 
 container
@@ -37,6 +44,7 @@ container
     .register(routes)
     .register(controllers)
     .register(services)
-    .register(repositories);
+    .register(repositories)
+    .register(models);
 
 module.exports = container;
