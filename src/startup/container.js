@@ -11,6 +11,7 @@ const { HomeService } = require('../services');
 const { HomeController } = require('../controllers');
 const { HomeRoutes } = require('../routers/index.routes');
 const { User, Idea, Comment } = require("../models");
+const { UserRepository, CommentRepository, IdeaRepository } = require("../repositories");
 
 
 const routes = {
@@ -25,7 +26,11 @@ const services = {
     HomeService: asClass(HomeService).singleton()
 };
 
-const repositories = {};
+const repositories = {
+    UserRepository: asClass(UserRepository).singleton(),
+    IdeaRepository: asClass(IdeaRepository).singleton(),
+    CommentRepository: asClass(CommentRepository).singleton(),
+};
 
 const models = {
     User: asValue(User),
