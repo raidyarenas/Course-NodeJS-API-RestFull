@@ -7,7 +7,7 @@ const app = require('.');
 const config = require("../config");
 const routesMain = require('../routers');
 
-const { HomeService } = require('../services');
+const { HomeService, CommentService, IdeaService, UserService } = require('../services');
 const { HomeController } = require('../controllers');
 const { HomeRoutes } = require('../routers/index.routes');
 const { User, Idea, Comment } = require("../models");
@@ -23,7 +23,10 @@ const controllers = {
 };
 
 const services = {
-    HomeService: asClass(HomeService).singleton()
+    CommentService: asClass(CommentService).singleton(),
+    HomeService: asClass(HomeService).singleton(),
+    IdeaService: asClass(IdeaService).singleton(),
+    UserService: asClass(UserService).singleton(),
 };
 
 const repositories = {
