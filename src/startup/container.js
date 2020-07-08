@@ -8,7 +8,7 @@ const config = require("../config");
 const routesMain = require('../routers');
 
 const { HomeService, CommentService, IdeaService, UserService } = require('../services');
-const { HomeController } = require('../controllers');
+const { HomeController, CommentController, IdeaController, UserController } = require('../controllers');
 const { HomeRoutes } = require('../routers/index.routes');
 const { User, Idea, Comment } = require("../models");
 const { UserRepository, CommentRepository, IdeaRepository } = require("../repositories");
@@ -19,7 +19,10 @@ const routes = {
 };
 
 const controllers = {
-    HomeController: asClass(HomeController.bind(HomeController)).singleton()
+    HomeController: asClass(HomeController.bind(HomeController)).singleton(),
+    IdeaController: asClass(IdeaController.bind(IdeaController)).singleton(),
+    CommentController: asClass(CommentController.bind(CommentController)).singleton(),
+    UserController: asClass(UserController.bind(UserController)).singleton(),
 };
 
 const services = {
