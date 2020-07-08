@@ -9,7 +9,7 @@ const compression = require("compression");
 const { NotFoundMiddleware, ErrorMiddleware } = require("../middlewares");
 
 
-module.exports = function ({ HomeRoutes }) {
+module.exports = function ({ HomeRoutes, CommentRoutes, IdeaRoutes, UserRoutes }) {
     const router = express.Router();
     const apiRoutes = express.Router();
 
@@ -20,6 +20,9 @@ module.exports = function ({ HomeRoutes }) {
         .use(compression());
     
     apiRoutes.use("/home", HomeRoutes);
+    apiRoutes.use("/user", CommentRoutes);
+    apiRoutes.use("/idea", IdeaRoutes);
+    apiRoutes.use("/comment", UserRoutes);
 
     router.use("/v1/api", apiRoutes);
     

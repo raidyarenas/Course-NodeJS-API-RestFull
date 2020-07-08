@@ -9,13 +9,16 @@ const routesMain = require('../routers');
 
 const { HomeService, CommentService, IdeaService, UserService } = require('../services');
 const { HomeController, CommentController, IdeaController, UserController } = require('../controllers');
-const { HomeRoutes } = require('../routers/index.routes');
+const { HomeRoutes, CommentRoutes, IdeaRoutes, UserRoutes } = require('../routers/index.routes');
 const { User, Idea, Comment } = require("../models");
 const { UserRepository, CommentRepository, IdeaRepository } = require("../repositories");
 
 
 const routes = {
     HomeRoutes: asFunction(HomeRoutes).singleton(),
+    IdeaRoutes: asFunction(IdeaRoutes).singleton(),
+    CommentRoutes: asFunction(CommentRoutes).singleton(),
+    UserRoutes: asFunction(UserRoutes).singleton(),
 };
 
 const controllers = {
