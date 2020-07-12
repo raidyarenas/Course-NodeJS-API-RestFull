@@ -1,7 +1,7 @@
-module.exports = ({ value, message }) => { 
-    if (!value) { 
+module.exports = (status, message) => {
+    if (status) {
         const error = new Error();
-        error.status = 404;
+        error.status = status;
         error.message = message;
         throw error;
     }

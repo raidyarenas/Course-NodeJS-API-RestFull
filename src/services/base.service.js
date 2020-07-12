@@ -1,14 +1,15 @@
-const { __required, __entity } = require("../helpers");
-const entity = require("../helpers/entity");
+const { ErrorHelper } = require("../helpers");
 class BaseService {
     constructor(repository) {
         this.repository = repository;
     }
 
     async get(id) {
-        __required({ value: id, message: "id must be sent" });
+        if (!id)
+            ErrorHelper(400, "id must be sent");
         const currentEntities = await this.repository.get(id);
-        __entity(currentEntities);
+        if (!currentEntities)
+            ErrorHelper(400, "Entity not found");
         return currentEntities;
     }
 
@@ -21,12 +22,14 @@ class BaseService {
     }
 
     async update(id, entity) { 
-        __required({ value: id, message: "id must be sent" });
+        if (!id)
+            ErrorHelper(400, "id must be sent");
         return await this.repository.update(id, entity)
     }
     
     async delete(id) { 
-        __required({ value: id, message: "id must be sent" });
+        if (!id)
+            ErrorHelper(400, "id must be sent");
         return this.repository.delete(id);
     }
 }
