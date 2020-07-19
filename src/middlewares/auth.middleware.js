@@ -3,7 +3,7 @@ const { ErrorHelper } = require("../helpers");
 const { JWT_SECRET } = require("../config");
 
 module.exports = function (req, res, next) { 
-    const token = req.headers("authorization");
+    const token = req.headers["authorization"];
     if (!token)
         ErrorHelper(404, "Token must be sent");
     
